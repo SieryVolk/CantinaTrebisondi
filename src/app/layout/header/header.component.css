@@ -1,0 +1,26 @@
+* {
+    height:15vh;
+}
+
+.barra a:hover{
+    color: rgb(137, 28, 43);
+}
+
+#logo {
+    margin-top:15px;
+    width:100px;
+    height:100px;
+}
+
+#cantina_trebisondi {
+    font-size: 42px;
+    color: #FFF;
+}
+
+.barra {
+    font-size: 20px;
+}
+
+a {
+    color: #FFF;
+}

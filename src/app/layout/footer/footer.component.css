@@ -1,0 +1,14 @@
+* {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    height: 20vh;
+}
+
+#stemma {
+    filter:grayscale(100%);
+}
+
+#stemma:hover {
+    filter:grayscale(0%);
+    transition-duration: 1s;
+}
