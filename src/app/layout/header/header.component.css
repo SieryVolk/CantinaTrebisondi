@@ -3,7 +3,11 @@
 }
 
 .barra a:hover{
-    color: rgb(137, 28, 43);
+    color: #891c2b;
+}
+
+.barra a:focus {
+    color: #891c2b;
 }
 
 #logo {
@@ -19,6 +23,7 @@
 
 .barra {
     font-size: 20px;
+    text-align: center;
 }
 
 a {
