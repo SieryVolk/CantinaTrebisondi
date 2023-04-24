@@ -17,7 +17,25 @@ export class ViniComponent implements OnInit {
   
   tuttiVini: any;
 
-  ngOnInit() {
+  ngOnInit() : void {
+      this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json')
+      .subscribe((getVini: any) => {
+        if (getVini) { hideloader() } // Quando get vini è vero richiama hideloader e nascondi lo spinner di caricamento
+        console.log(getVini)
+        this.tuttiVini = Object.keys(getVini).map((key)=> {
+          return getVini[key]
+        });
+        console.log(this.tuttiVini)
+
+        function hideloader() {
+          document.getElementById('loading')!.style.display = 'none';   // Il ! da la possibilità di avere valori nulli,
+                                                                        // altrimenti TypeScript non permette l'esecuzione     
+        }      
+      })
+  }
+}
+
+
 
   //  new Observable(observer => {
   //     let count = 0
@@ -30,14 +48,3 @@ export class ViniComponent implements OnInit {
   //     })
   //   }
   // }
-
-      this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json')
-      .subscribe((getVini: any) => {
-        console.log(getVini)
-        this.tuttiVini = Object.keys(getVini).map((key)=> {
-          return getVini[key]
-        })
-        console.log(this.tuttiVini)
-      })
-  }
-}

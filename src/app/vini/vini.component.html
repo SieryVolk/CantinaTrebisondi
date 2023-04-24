@@ -1,5 +1,7 @@
-<!-- <H2>Oggi è {{oggi | date:'dd MMMM yyyy'}}</H2> -->
-<div class="row d-flex justify-content-around g-0">
+<!-- Con questo ngClass faccio in modo che, finche non vengono caricati i vini dal DB, ci sia uno spazio nero sullo sfondo,
+    altrimenti vedrei per qualche istante il footer prendere il posto del router-outlet -->
+<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0"> 
+
     <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3">
 
     <!-- <div *ngIf="vino.colore === 'bianco'"> -->
@@ -8,6 +10,14 @@
         <h6 class="cap pt-1 text-center" [ngClass]="{'vinoRosso': vino.colore === 'rosso', 'vinoBianco': vino.colore === 'bianco'}">{{vino.colore}}</h6>
         <h6 class="pt-1 text-center">{{vino.annata}}</h6>
         <h6 class="pt-1 text-center">{{vino.prezzo | currency:'EUR'}}</h6> <!-- pipe per valuta -->
-
     </div>
 </div>
+
+<!-- Spinner di caricamento -->
+<div class="d-flex justify-content-center">
+    <div class="" role="status" >
+      <span class="sr-only" id="loading"></span>
+    </div>
+  </div>
+
+<!-- <H2>Oggi è {{oggi | date:'dd MMMM yyyy'}}</H2> -->
