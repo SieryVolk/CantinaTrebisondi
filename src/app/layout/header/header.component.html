@@ -1,15 +1,21 @@
-<nav class="navbar navbar-expand-lg py-3">
+<nav class="navbar navbar-expand-lg ">
     <div class="container-fluid">
-    <a href="" class="navbar-brand"><img id="logo" src="../../../assets/logoWhite.png" class="d-inline-block align-text-center mb-3">
+    <a href="" class="navbar-brand"><img id="logo" src="../../../assets/logoWhite.png" class="d-inline-block align-text-center mb-2">
        <span id="cantina_trebisondi"> CANTINA TREBISONDI </span>
     </a>
-        <ul class="navbar-nav me-5 mt-5 barra">
+        <ul class="navbar-nav me-5 mb-3 barra">
             <li class="nav-item px-4">
                 <a href="" class="nav-link">Chi Siamo</a>
             </li>
+            <div class="dropdown">
             <li class="nav-item px-4">
                 <a routerLink="/home/vini" class="nav-link">I Vini</a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/home/vini-rossi" class="dropdown-item">Rossi</a></li>
+                        <li><a routerLink="/home/vini-bianchi" id="vinBianco" class="dropdown-item">Bianchi</a></li>
+                    </ul>
             </li>
+            </div>
             <li class="nav-item px-4">
                 <a href="" class="nav-link">La Cantina</a>
             </li>

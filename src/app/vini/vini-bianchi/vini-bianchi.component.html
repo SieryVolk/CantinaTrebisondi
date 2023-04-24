@@ -1,6 +1,5 @@
-<!-- <H2>Oggi è {{oggi | date:'dd MMMM yyyy'}}</H2> -->
 <div class="row d-flex justify-content-around g-0">
-    <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3">
+    <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3" [ngClass]="{'disappear': vino.colore === 'rosso'}" >
 
     <!-- <div *ngIf="vino.colore === 'bianco'"> -->
         <img class="d-block mx-auto" src={{vino.percorso}} height="300px">

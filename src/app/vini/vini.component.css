@@ -9,3 +9,7 @@
 .cap {
     text-transform: capitalize;
 }
+
+.disappear {
+    display:none
+}

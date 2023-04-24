@@ -1,6 +1,8 @@
+/* 
 * {
     height:15vh;
-}
+} 
+*/
 
 .barra a:hover{
     color: #891c2b;
@@ -29,3 +31,20 @@
 a {
     color: #FFF;
 }
+
+.dropdown:hover .dropdown-menu {
+    display:block;
+}
+
+.dropdown-menu {
+    background-color: #292929;
+}
+
+.dropdown-item {
+    background-color: transparent;
+}
+
+#vinBianco:hover {
+    color: #fffbc0;
+}
+
