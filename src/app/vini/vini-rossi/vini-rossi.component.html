@@ -1,7 +1,6 @@
 <div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0 py-3 mb-5"> 
-    <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3" [ngClass]="{'disappear': vino.colore === 'bianco'}" >
+    <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3" >
 
-    <!-- <div *ngIf="vino.colore === 'rosso'"> -->
         <img class="d-block mx-auto" src={{vino.percorso}} height="300px">
         <h4 class="pt-4 text-center" [ngClass]="{'vinoRosso': vino.colore === 'rosso', 'vinoBianco': vino.colore === 'bianco'}">{{vino.nome | uppercase}}</h4>  <!-- pipe uppercase -->
         <h6 class="cap pt-1 text-center" [ngClass]="{'vinoRosso': vino.colore === 'rosso', 'vinoBianco': vino.colore === 'bianco'}">{{vino.colore}}</h6>

@@ -13,7 +13,7 @@ export class ViniRossiComponent implements OnInit {
   tuttiVini:any;
 
   ngOnInit() {
-    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json')
+    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="colore"&equalTo="rosso"')
     .subscribe((getVini: any) => {
       this.tuttiVini = Object.keys(getVini).map((key) => { 
         return getVini[key]

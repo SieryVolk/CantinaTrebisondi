@@ -10,8 +10,8 @@
     text-transform: capitalize;
 }
 
-.disappear {
-    display:none
+.disappear {    /* Ora la classe disappear non è usata in quanto era utilizzata per fare il filtro vini lato Client */
+    display:none;
 }
 
 .sfondoNero {
