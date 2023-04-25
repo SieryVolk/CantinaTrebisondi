@@ -16,8 +16,9 @@ export class ViniComponent implements OnInit {
   constructor (private baseDati: BaseDatiService) {}
   
   tuttiVini: any;
+  getVini: any;
 
-  ngOnInit() : void {
+  ngOnInit() {
       this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json')
       .subscribe((getVini: any) => {
         if (getVini) { hideloader() } // Quando get vini è vero richiama hideloader e nascondi lo spinner di caricamento
@@ -34,7 +35,6 @@ export class ViniComponent implements OnInit {
       })
   }
 }
-
 
 
   //  new Observable(observer => {

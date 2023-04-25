@@ -1,6 +1,6 @@
 <!-- Con questo ngClass faccio in modo che, finche non vengono caricati i vini dal DB, ci sia uno spazio nero sullo sfondo,
     altrimenti vedrei per qualche istante il footer prendere il posto del router-outlet -->
-<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0"> 
+<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0 py-3 mb-5"> 
 
     <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3">
 
