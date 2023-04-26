@@ -40,3 +40,19 @@
       100% { transform: rotate(360deg); }
     }
   
+
+    .dropdown:hover .dropdown-menu {
+        display:block;
+    }
+    
+    .dropdown-menu {
+        background-color: #292929;
+    }
+    
+    .dropdown-item {
+        background-color: transparent;
+    }
+
+    li {
+        color: #FFF;
+    }

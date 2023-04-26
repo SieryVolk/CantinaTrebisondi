@@ -8,6 +8,9 @@ export class BaseDatiService {
 
   constructor(private http: HttpClient) { }
 
+  baseDati : any = null;
+  tuttiVini : any = null;
+
   getVini(url:string) {
     return this.http.get(url)
   }

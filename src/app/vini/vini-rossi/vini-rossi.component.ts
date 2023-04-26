@@ -21,3 +21,6 @@ export class ViniRossiComponent implements OnInit {
     })
   }
 }
+
+// NB Il Realtime DB di Firebase non supporta query multiple, quindi non è possibile affinare ulteriormente la ricerca con più criteri come
+// potremmo fare in MySql. Per farlo è necessario utilizzare il Firestore DB
