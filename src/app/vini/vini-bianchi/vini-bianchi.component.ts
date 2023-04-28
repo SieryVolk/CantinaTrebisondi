@@ -23,7 +23,7 @@ export class ViniBianchiComponent implements OnInit {
   }
 
   daPrezzoBasso () {
-    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="prezzo"&endAt=999')
+    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="prezzo"&endAt=9999')
     .subscribe((getVini: any) => {
       this.tuttiVini = Object.keys(getVini).map((key) => {
         return getVini[key]
@@ -32,7 +32,7 @@ export class ViniBianchiComponent implements OnInit {
   }
 
   daPrezzoAlto () {
-    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="prezzo"&endAt=999')
+    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="prezzo"&endAt=9999')
     .subscribe((getVini: any) => {
       this.tuttiVini = Object.keys(getVini).map((key) => {
         return getVini[key]
@@ -40,9 +40,28 @@ export class ViniBianchiComponent implements OnInit {
       // Il Realtime DB di Firebase non permette di ordinare gli elementi risultanti da una query in ordine DESC,
       // quindi dobbiamo usare il seguente escamotage: ordinare in ASC, prendere l'array ed invertirlo. In questo modo lo avremo in DESC
       this.tuttiVini.reverse();
-      console.log(this.tuttiVini);
     })
   }
+
+  daPiuGiovane () {
+    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="annata"&endAt=9999')
+    .subscribe((getVini: any) => {
+      this.tuttiVini = Object.keys(getVini).map((key) => {
+        return getVini[key]
+      })
+    })
+  }
+
+  daPiuMaturo() {
+    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="annata"&endAt=9999')
+    .subscribe((getVini: any) => {
+      this.tuttiVini = Object.keys(getVini).map((key) => {
+        return getVini[key]
+      })
+      this.tuttiVini.reverse()
+    })
+  }
+
 }
 
 
