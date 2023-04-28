@@ -4,19 +4,26 @@
        <span id="cantina_trebisondi"> CANTINA TREBISONDI </span>
     </a>
         <ul class="navbar-nav me-5 mb-3 barra">
-            <li class="nav-item px-4">
-                <a href="" class="nav-link">Chi Siamo</a>
-            </li>
             <div class="dropdown">
-            <li class="nav-item px-4">
+            <li *ngIf="mobile === false" class="nav-item px-4">     <!-- Menu I Vini è versione desktop -->
                 <a routerLink="/home/vini" class="nav-link">I Vini</a>
                     <ul class="dropdown-menu">
+                        <li><a routerLink="/home/vini-rossi" class="dropdown-item">Rossi</a></li>
+                        <li><a routerLink="/home/vini-bianchi" id="vinBianco" class="dropdown-item">Bianchi</a></li>
+                    </ul>
+                </li>
+            <li *ngIf="mobile === true" class="nav-item px-4" (click)="menuViniMobile()">       <!-- Menu I Vini è versione mobile -->
+                <a class="nav-link">I Vini</a>
+                    <ul class="dropdown-menu" id="dropVini">
                         <li><a routerLink="/home/vini-rossi" class="dropdown-item">Rossi</a></li>
                         <li><a routerLink="/home/vini-bianchi" id="vinBianco" class="dropdown-item">Bianchi</a></li>
                         <li><a routerLink="/home/vini" id="noFiltrato" class="dropdown-item">Tutti i vini</a></li>
                     </ul>
             </li>
             </div>
+            <li class="nav-item px-4">
+                <a href="" class="nav-link">Chi Siamo</a>
+            </li>
             <li class="nav-item px-4">
                 <a href="" class="nav-link">La Cantina</a>
             </li>

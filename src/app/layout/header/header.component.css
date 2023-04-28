@@ -32,8 +32,10 @@ a {
     color: #FFF;
 }
 
+@media (min-width:1000px) {
 .dropdown:hover .dropdown-menu {
     display:block;
+    }
 }
 
 .dropdown-menu {

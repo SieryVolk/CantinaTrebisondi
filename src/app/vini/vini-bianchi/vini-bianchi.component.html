@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-end me-5 pe-5 dropdown">
-    <div class="btn btn-outline-secondary  px-5 py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="btn btn-outline-secondary mt-4 px-5 pt-2" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
     ORDINA PER:
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <ul class="dropdown-menu">
         <li class="dropdown-item" (click)="daPrezzoBasso()">
             Prezzo, dal più economico
         </li>
@@ -18,7 +18,7 @@
 </div>
 </div>
 
-<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0 py-3 mb-5"> 
+<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0 pb-3 mb-5"> 
     
     <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3" [ngClass]="{'disappear': vino.colore === 'rosso'}">
         <img class="d-block mx-auto" src={{vino.percorso}} height="300px">
