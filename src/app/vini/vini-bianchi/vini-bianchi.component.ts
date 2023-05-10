@@ -10,11 +10,12 @@ export class ViniBianchiComponent implements OnInit {
 
   constructor (private baseDati: BaseDatiService) {}
 
-  tuttiVini:any;
-
+  tuttiVini: any
+  coloreVino: string = "bianco"
 
   ngOnInit() {
-    this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="colore"&equalTo="bianco"')
+    // this.baseDati.getViniBase()
+    this.baseDati.getVini(`https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="colore"&equalTo="${this.coloreVino}"`)
     .subscribe((getVini: any) => {
       this.tuttiVini = Object.keys(getVini).map((key) => {
         return getVini[key]

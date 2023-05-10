@@ -1,11 +1,30 @@
-<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0 py-3 mb-5"> 
-    <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3" >
+<div class="d-flex justify-content-end me-5 pe-5 dropdown">
+    <div class="btn btn-outline-secondary mt-4 px-5 pt-2" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
+    ORDINA PER:
+    <ul class="dropdown-menu">
+        <li class="dropdown-item" (click)="daPrezzoBasso()">
+            Prezzo, dal più economico
+        </li>
+        <li class="dropdown-item" (click)="daPrezzoAlto()">
+            Prezzo, dal più caro
+        </li>
+        <li class="dropdown-item" (click)="daPiuGiovane()">
+            Annata, dal più giovane
+        </li>
+        <li class="dropdown-item" (click)="daPiuMaturo()">
+            Annata, dal più maturo
+        </li>
+    </ul>
+</div>
+</div>
 
+<div [ngClass]="{'sfondoNero' : !tuttiVini }" class="row d-flex justify-content-around g-0 py-3 mb-5"> 
+    
+    <div *ngFor="let vino of tuttiVini" class="p-5 col-lg-3" [ngClass]="{'disappear': vino.colore === 'bianco'}">
         <img class="d-block mx-auto" src={{vino.percorso}} height="300px">
         <h4 class="pt-4 text-center" [ngClass]="{'vinoRosso': vino.colore === 'rosso', 'vinoBianco': vino.colore === 'bianco'}">{{vino.nome | uppercase}}</h4>  <!-- pipe uppercase -->
         <h6 class="cap pt-1 text-center" [ngClass]="{'vinoRosso': vino.colore === 'rosso', 'vinoBianco': vino.colore === 'bianco'}">{{vino.colore}}</h6>
         <h6 class="pt-1 text-center">{{vino.annata}}</h6>
         <h6 class="pt-1 text-center">{{vino.prezzo | currency:'EUR'}}</h6> <!-- pipe per valuta -->
-
     </div>
 </div>

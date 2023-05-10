@@ -56,3 +56,8 @@
     li {
         color: #FFF;
     }
+
+    li:hover {
+        color: #FFF;
+        text-decoration: underline;
+    }
