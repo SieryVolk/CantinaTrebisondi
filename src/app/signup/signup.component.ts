@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
 
 
 @Component({
@@ -9,17 +10,25 @@ import { FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule } from
 })
 export class SignupComponent implements OnInit{
   formVar!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.formVar = this.fb.group({
-      mail: '',
+      email: '',
       password: '',
     })
   }
 
-  onSubmit() {
-    console.log(this.formVar.value);
-  }
+  // ngOnInit() : void {
+  // }
 
+  onSubmit() {
+    const email = this.formVar.value.email;
+    const password = this.formVar.value.password;
+    console.log(email, password);
+    console.log(this.formVar.value);
+    this.authService.signUp({email: email, password:password, returnSecureToken: true}).subscribe(data => {
+      console.log(data);
+    })
+  }
 }

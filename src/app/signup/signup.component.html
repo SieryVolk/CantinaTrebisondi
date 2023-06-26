@@ -1,13 +1,13 @@
-<h1 class="d-flex justify-content-center m-4">REGISTRZIONE</h1>
+<h1 class="d-flex justify-content-center m-4">REGISTRAZIONE</h1>
 
-<form #homeform="ngForm" class="m-5 justify-content-center" [formGroup]="formVar" (ngSubmit)="onSubmit()">
+<form class="m-5" [formGroup]="formVar" (ngSubmit)="onSubmit()">
   <div class="form-group col-md-6 p-3">
     <label>Email</label>
-    <input class="form-control" type="email" name="email" ngModel required>
+    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="email" formControlName="email" required>
   </div>
   <div class="form-group col-md-6 p-3">
     <label>Password</label>
-    <input class="form-control" type="password" name="password" ngModel required>
+    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="password" formControlName="password" required>
   </div>
     <button class="btn btn-light m-3" type="submit">Entra</button>
 </form>
