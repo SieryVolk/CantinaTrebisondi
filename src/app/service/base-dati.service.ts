@@ -2,19 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BaseDatiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  baseDati: any;
+  tuttiVini: any;
+  coloreVino: string = 'bianco';
+  vinoSpec: any;
 
-  baseDati : any = null;
-  tuttiVini : any = null;
-  coloreVino : string = "";
-  log : string = "provaprova";
-
-  getVini(url:string) {
-    return this.http.get(url)
+  getVini(url: string) {
+    return this.http.get(url);
   }
 
   // TENTATIVO DI PARAMETRIZZAZIONE DELLA FUNZIONE DI LETTURA VINI PER TUTTI I COMPONENT
@@ -27,6 +26,4 @@ export class BaseDatiService {
   //     })
   //   })
   // }
-
-
 }

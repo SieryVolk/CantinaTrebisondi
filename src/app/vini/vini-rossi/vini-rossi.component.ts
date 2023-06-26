@@ -1,5 +1,5 @@
 import { BaseDatiService } from './../../service/base-dati.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-vini-rossi',
@@ -12,11 +12,12 @@ export class ViniRossiComponent implements OnInit {
 
   tuttiVini: any
   coloreVino: string = "rosso"
+  @Input('Buonrosso')buonrosso: string = "io sono un dato del component vini-rossi"
 
   ngOnInit() {
     this.baseDati.getVini(`https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json?orderBy="colore"&equalTo="${this.coloreVino}"`)
     .subscribe((getVini: any) => {
-      this.tuttiVini = Object.keys(getVini).map((key) => { 
+      this.tuttiVini = Object.keys(getVini).map((key) => {
         return getVini[key]
       })
     })

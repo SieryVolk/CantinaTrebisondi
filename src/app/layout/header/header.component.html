@@ -9,7 +9,7 @@
                 <a routerLink="/home/vini" class="nav-link">I Vini</a>
                     <ul class="dropdown-menu">
                         <li><a routerLink="/home/vini-rossi" class="dropdown-item">Rossi</a></li>
-                        <li><a routerLink="/home/vini-bianchi" id="vinBianco" class="dropdown-item">Bianchi</a></li>
+                        <li><a routerLink="/home/vini-bianchi" id="vinBianco" class="dropdown-item" (click)="specificWine()" >Bianchi</a></li>
                     </ul>
                 </li>
             <li *ngIf="mobile === true" class="nav-item px-4" (click)="menuViniMobile()">       <!-- Menu I Vini è versione mobile -->
@@ -22,7 +22,7 @@
             </li>
             </div>
             <li class="nav-item px-4">
-                <a href="" class="nav-link">Chi Siamo</a>
+                <a routerLink="/home/chi-siamo" class="nav-link">Chi Siamo</a>
             </li>
             <li class="nav-item px-4">
                 <a href="" class="nav-link">La Cantina</a>

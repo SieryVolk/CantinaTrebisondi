@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ViniBianchiComponent } from 'src/app/vini/vini-bianchi/vini-bianchi.component';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
+  @Input()
+  public ViniBianchiContext!: ViniBianchiComponent; 
+
   constructor() {}
 
   mobile: boolean = false;
   menuViniToggle: boolean = false;
+
 
   ngOnInit() {
     this.verificaMobile()
@@ -29,5 +34,9 @@ export class HeaderComponent implements OnInit {
     document.getElementById('dropVini')!.style.display = 'block'
     } else document.getElementById('dropVini')!.style.display = 'none'
     this.menuViniToggle = !this.menuViniToggle
+  }
+
+  specificWine() {
+
   }
 }

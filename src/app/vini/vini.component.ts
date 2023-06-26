@@ -21,7 +21,7 @@ export class ViniComponent implements OnInit {
   ngOnInit() {
       this.baseDati.getVini('https://myhealth-9920a-default-rtdb.europe-west1.firebasedatabase.app/vini.json')
       .subscribe((getVini: any) => {
-        if (getVini) { hideloader() } // Quando get vini è vero richiama hideloader e nascondi lo spinner di caricamento
+        if (getVini) { hideloader() } // Quando getVini è vero richiama funzione hideloader() che nasconde lo spinner di caricamento
         console.log(getVini)
         this.tuttiVini = Object.keys(getVini).map((key)=> {
           return getVini[key]
